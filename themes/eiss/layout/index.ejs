@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>Home</title>
+</head>
+<body>
+<section class="index">
+    <% var last; %>
+    <% page.posts.each(function (post) { %>
+        <% var year = post.date.year(); %>
+        <% if (last != year){ %>
+            <div class="post-year">
+                <p><span class="post-year-special">#</span>
+                    <%= year %>
+                </p>
+            </div>
+            <% last = year; %>
+        <% } %>
+        <a class="post-list" href="<%- url_for(post.path) %>">
+            <div class="post-list-item">
+                <div class="post-title">
+                    <%= post.title %>
+                </div>
+                <div class="post-time">
+                    <%- full_date(post.date, 'MMMM Do') %>
+                </div>
+            </div>
+        </a>
+    <% }) %>
+</section>
+</body>
+</html>

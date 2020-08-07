@@ -1,0 +1,45 @@
+.post {
+  margin: 1em auto;
+  padding: 30px 50px;
+}
+
+.article-entry {
+  .post:first-child {
+    margin-top: 0;
+  }
+
+
+  .post-meta {
+    color: #BABABA;
+  }
+
+  .post-title {
+    margin: .67em 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align center
+
+    .post-title-link {
+      color: #368CCB;
+      text-decoration: none;
+    }
+  }
+
+  .post-content {
+    a {
+      color: #368CCB;
+      text-decoration: none;
+    }
+  }
+
+  .post-content h4::before,
+  .post-content h5::before,
+  .post-content h6::before {
+    content: "#";
+    padding-right: 10px;
+    color: #6d9ee7;
+  }
+
+
+}
